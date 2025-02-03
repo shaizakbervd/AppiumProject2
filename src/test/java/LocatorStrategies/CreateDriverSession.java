@@ -38,6 +38,21 @@ public class CreateDriverSession {
         URL url = new URL("http://0.0.0.0:4723");
 
         return new AndroidDriver(url, capabilities);
+    }
+
+    public static AppiumDriver Initialize_Driver_AppPack_Activity() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("appium:automationName", "uiautomator2");
+        capabilities.setCapability("appium:deviceName", "pixel_7");
+        capabilities.setCapability("appium:udid", "emulator-5554");
+        capabilities.setCapability("appium:appPackage", "com.google.android.apps.maps");
+        capabilities.setCapability("appium:appActivity", "com.google.android.maps.MapsActivity");
+        capabilities.setCapability("appium:newCommandTimeout", 500);
+
+        URL url = new URL("http://0.0.0.0:4723");
+
+        return new AndroidDriver(url, capabilities);
 
     }
 }
