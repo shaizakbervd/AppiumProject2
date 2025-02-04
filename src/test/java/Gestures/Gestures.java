@@ -67,11 +67,6 @@ public class Gestures {
                 "percent", 1.0
         ));
 
-
-
-
-
-
     }
 
     public static void Swipe_Horizontal(AppiumDriver driver) throws InterruptedException {
