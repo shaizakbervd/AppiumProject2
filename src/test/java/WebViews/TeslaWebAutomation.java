@@ -6,6 +6,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -38,7 +40,15 @@ public class TeslaWebAutomation {
 
 
         web_driver.findElement(By.xpath("//*[@id=\"main-content\"]/section/div[2]/div/div[12]/div/div/div/div[4]/div/div/div/div[1]/div/div[2]/div/div[1]/button")).click();
+        web_driver.findElement(By.xpath("//*[@id=\"main-content\"]/section/div[2]/div/div[12]/div/div/div/div[4]/div/div/div/div[1]/div/div[2]/div/div[1]/button")).click();
+        web_driver.findElement(By.xpath("//*[@id=\"main-content\"]/section/div[2]/div/div[12]/div/div/div/div[4]/div/div/div/div[1]/div/div[2]/div/div[1]/button")).click();
+        web_driver.findElement(By.xpath("//*[@id=\"main-content\"]/section/div[2]/div/div[12]/div/div/div/div[4]/div/div/div/div[1]/div/div[2]/div/div[1]/button")).click();
 
+        WebElement element = web_driver.findElement(By.xpath("//*[@id=\"FIRST_NAME\"]"));
+        //this is javascript executor which we did in selenium and here we are performing scroll on firstname field yani usko pakar ke scroll karega
+
+        ((JavascriptExecutor) web_driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        element.sendKeys("Shaiz");
 
 
 

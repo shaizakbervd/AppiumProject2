@@ -67,9 +67,13 @@ public class CreateDriverSession {
         capabilities.setCapability("appium:deviceName", "pixel_7");
         capabilities.setCapability("appium:udid", "emulator-5554");
         capabilities.setCapability("appium:newCommandTimeout", 500);
-        capabilities.setCapability("appium:chromedriverExecutable",
-                System.getProperty("user.dir") + File.separator + "src" + File.separator +
-                        "main" + File.separator + "resources" + File.separator + "chromedriver1.exe");
+        //if you wanted appium to fetch automatically chromedriver so use the following command first
+        // run command in cmd instead of runnning appium only run, appium --allow-insecure chromedriver_autodownload
+        //comment below line and run code you will notice chromdriver will be downloaded default by appium matching to the chrome version of mobile
+
+//        capabilities.setCapability("appium:chromedriverExecutable",
+//                System.getProperty("user.dir") + File.separator + "src" + File.separator +
+//                        "main" + File.separator + "resources" + File.separator + "chromedriver1.exe");
         capabilities.setCapability("appium:browserName", "Chrome");
         capabilities.setCapability("appium:autoGrantPermissions", true);
         capabilities.setCapability("appium:autoAcceptAlerts", true);
